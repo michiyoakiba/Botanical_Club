@@ -1,2 +1,12 @@
-<h1>Plants#index</h1>
+<% @plants.each do |plant| %>
+<div>
+  <%= link_to plant_path(plant.id) do %>
+    <%= image_tag plant.get_image %>
+  <% end %>
+  <p>投稿ユーザー画像：<%= image_tag 'mcy_image.jpg' %></p>
+  <p>植物名：<%= plant.plant_name %></p>
+  <p>説明：<%= plant.caption %></p>
+  <p>ユーザーネーム：<%= plant.user.name %></p>
+</div>
+<% end %>
 <p>Find me in app/views/plants/index.html.erb</p>
