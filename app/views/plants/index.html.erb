@@ -7,6 +7,7 @@
   <p>植物名：<%= plant.name %></p>
   <p>説明：<%= plant.caption %></p>
   <p>ユーザーネーム：<%= plant.user.name %></p>
+  <p><%= link_to "#{plant.plant_comments.count} コメント", plant_path(plant.id) %></p>
 </div>
 <% end %>
 <p>Find me in app/views/plants/index.html.erb</p>

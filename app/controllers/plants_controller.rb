@@ -16,6 +16,7 @@ class PlantsController < ApplicationController
 
   def show
     @plant = Plant.find(params[:id])
+    @plant_comment = PlantComment.new
   end
   
   def destroy

@@ -9,4 +9,23 @@
     <%= link_to "削除", plant_path(@plant), method: :delete %>
   <% end %>
 </div>
+
+<div>
+  <p>コメント件数：<%= @plant.plant_comments.count %></p>
+  <% @plant.plant_comments.each do |plant_comment| %>
+    <p><%= image_tag plant_comment.user.get_profile_image(100,100) %></p>
+    <%= plant_comment.user.name %>
+    <%= plant_comment.created_at.strftime('%Y/%m/%d') %><%= plant_comment.comment %>
+    <% if plant_comment.user == current_user %>
+      <%= link_to "削除", plant_plant_comment_path(plant_comment.plant, plant_comment), method: :delete %>
+    <% end %>
+  <% end %>
+</div>
+<div>
+  <%= form_with model: [@plant, @plant_comment] do |f| %>
+    <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
+    <%= f.submit "送信する" %>
+  <% end %>
+</div>
+
 <p>Find me in app/views/plants/show.html.erb</p>
