@@ -19,15 +19,15 @@ class PlantsController < ApplicationController
   end
   
   def destroy
-    plant = Plant.find(params[:id])
-    plant.destroy
+    @plant = Plant.find(params[:id])
+    @plant.destroy
     redirect_to plants_path
   end
   
   private
 
   def plant_params
-    params.require(:plant).permit(:plant_name, :image, :caption)
+    params.require(:plant).permit(:name, :image, :caption)
   end
   
 end
