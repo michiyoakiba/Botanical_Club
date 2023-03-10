@@ -2,7 +2,7 @@
   <%= image_tag @plant.get_image %>
   <p>ショップ名：<%= @plant.name %></p>
   <p>説明：<%= @plant.caption %></p>
-  <p>投稿ユーザー画像：<%= image_tag 'mcy_image.jpg' %></p>
+  <p>投稿ユーザー画像：<%= image_tag @plant.user.get_profile_image(100,100) %></p>
   <p>ユーザーネーム：<%= @plant.user.name %></p>
   <p>投稿日：<%= @plant.created_at.strftime('%Y/%m/%d') %></p>
   <% if @plant.user == current_user %>
