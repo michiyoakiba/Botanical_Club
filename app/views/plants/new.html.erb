@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row no-gutters">
     <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
-      <h5 class="text-dark bg-light p-4 mb-0">画像投稿フォーム</h5>
+      <h5 class="text-dark bg-light p-4 mb-0">投稿フォーム</h5>
       <div class="form-body p-4">
         <% if @plant.errors.any? %>
           <ul class="alert alert-danger" role="alert">
@@ -23,7 +23,7 @@
           </div>
           <%= f.text_area :caption, class:"form-control", rows:"3", placeholder:"コメントここに" %>
           <hr>
-          <%= f.submit '投稿', class:"btn btn-lg btn-block btn-success mt-4" %>
+          <%= f.submit '投稿', class:"btn btn-lg btn-block btn-outline-success mt-4" %>
         <% end %>
       </div>
     </div>
