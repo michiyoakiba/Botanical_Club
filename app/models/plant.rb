@@ -5,7 +5,7 @@ class Plant < ApplicationRecord
   has_many :plant_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   
-  validates :name, presence: true
+  validates :plant_name, presence: true
   validates :image, presence: true
   
   def get_image
