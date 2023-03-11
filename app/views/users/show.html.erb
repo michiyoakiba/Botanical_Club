@@ -1,9 +1,20 @@
-<div>
-  <h3><%= @user.name %></h3>
-  <%= image_tag @user.get_profile_image(100,100) %>
-  <% if @user == current_user %>
-    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
-  <% end %>
+<div class="container">
+  <div class="row justify-content-around">
+    <div class="col-sm-4 col-md-8">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th><%= image_tag @user.get_profile_image(100,100) %></th>
+          <th><%= @user.name %></th>
+        <% if @user == current_user %>
+          <th><%= link_to "プロフィール編集", edit_user_path(@user) %></th>
+        <% end %>
+        </tr>
+       </thead>
+      </table>
+    </div>
+  </div>
 </div>
+<div><%= render 'plants/list', plants: @plants %></div>
 
-<%= render 'plants/list', plants: @plants %>
+
