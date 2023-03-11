@@ -5,6 +5,9 @@ class Plant < ApplicationRecord
   has_many :plant_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   
+  validates :name, presence: true
+  validates :image, presence: true
+  
   def get_image
      unless image.attached?
        file_path = Rails.root.join('app/assets/images/no_image.jpg')

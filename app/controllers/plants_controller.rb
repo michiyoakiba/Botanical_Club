@@ -6,10 +6,13 @@ class PlantsController < ApplicationController
   def create
     @plant = Plant.new(plant_params)
     @plant.user_id = current_user.id
-    @plant.save
-    redirect_to plants_path
+    if @plant.save
+      redirect_to plants_path
+    else
+      render :new
+    end  
   end
-
+  
   def index
     @plants = Plant.all
   end
