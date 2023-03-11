@@ -1,0 +1,12 @@
+<% plants.each do |plant| %>
+<div>
+  <%= link_to plant_path(plant.id) do %>
+    <%= image_tag plant.get_image %>
+  <% end %>
+  <p>投稿ユーザー画像：<%= image_tag plant.user.get_profile_image(100,100) %></p>
+  <p>植物名：<%= plant.name %></p>
+  <p>説明：<%= plant.caption %></p>
+  <p>ユーザーネーム：<%= plant.user.name %></p>
+  <p><%= link_to "#{plant.plant_comments.count} コメント", plant_path(plant.id) %></p>
+</div>
+<% end %>
