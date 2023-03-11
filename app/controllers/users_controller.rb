@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @plants = @user.plants.page(params[:page])
-    @plants = @user.plants
   end
 
   def edit
