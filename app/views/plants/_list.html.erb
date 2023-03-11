@@ -10,3 +10,4 @@
   <p><%= link_to "#{plant.plant_comments.count} コメント", plant_path(plant.id) %></p>
 </div>
 <% end %>
+<%= paginate @plants %>

@@ -14,7 +14,7 @@ class PlantsController < ApplicationController
   end
   
   def index
-    @plants = Plant.all
+    @plants = Plant.page(params[:page])
   end
 
   def show
