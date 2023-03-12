@@ -1,9 +1,27 @@
-<h2>プロフィール編集</h2>
-<%= form_with model: @user do |f| %>
-  <label for="inputName">Name</label>
-  <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
-  <label for="inputImage">ProfileImage</label>
-  <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %>  
-  <%= f.submit "変更を保存" %>
-<% end %>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto text-center shadow-lg rounded px-0 my-5">
+      <h5 class="text-dark bg-light py-4 mb-0">プロフィール編集</h5>
+      <div class="form-body p-4">
+        <div class="mx-auto text-center">
+            </div>
+        <%= form_with model: @user do |f| %>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-user"></i></span>
+            </div>
+            <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputPassword", placeholder:"名前" %>
+          </div>
+          <div class="input-group mb-3" >
+            <div class="mx-auto text-center">
+            <%= image_tag @user.get_profile_image(100,100) %>  
+            </div>
+          </div>  
+            <div><%= f.file_field :image, accept: "image/*", class: "w-100" %></div>    
+          
+          <%= f.submit "変更を保存", class:"btn btn-lg btn-block btn-outline-info mt-4" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
