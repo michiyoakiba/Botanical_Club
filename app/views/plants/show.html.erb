@@ -30,10 +30,10 @@
       </div>
     <% end %>  
     </div>
-
-
- <%= @plant.plant_comments.count %>件コメント 
- 
+    
+<div class="comments card-text mx-3">
+  <h4 class="mt-3"><%= @plant.plant_comments.count %>件コメント</h4>
+</div>
  
  <div class="border m-3">
    <div class="card-body">
@@ -57,23 +57,43 @@
 </div>
         
         
-
-        <%= form_with model: [@plant, @plant_comment] do |f| %>
-          <div class="mb-3">
-            <div class="input-group-prepend">
-              <div>コメントする</div>
-            </div>
+<!--<div class="comments card-text mx-3">-->
+  <!--<h5 class="mt-1">コメントする</h5>-->
+<!--</div>-->
+ 
+ 
+       <div class="mx-3">
+          <label for="exampleFormControlTextarea1" class="form-label">コメントする</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
+          <%= form_with model: [@plant, @plant_comment] do |f| %>
+            <%= f.text_area :comment, class:"form-control", id:"inputPassword", placeholder:"コメントをここに" %>  
+          </textarea>
+      </div>
+ 
+       
+ 
+ 
+        <!--%= form_with model: [@plant, @plant_comment] do |f| %>-->
+            <!--%= f.text_area :comment, class:"form-control", id:"inputPassword", placeholder:"コメントをここに" %>-->
+      
+ 
+        
+          
+<!--<div class="input-group-prepend mb-3">-->
+<!--    <div class="border m-5">-->
             
-            <%= f.text_area :comment, class:"form-control", id:"inputPassword", placeholder:"コメントをここに" %>
-          </div>
+            <!--%= form_with model: [@plant, @plant_comment] do |f| %>-->
+            <!--%= f.text_area :comment, class:"form-control", id:"inputPassword", placeholder:"コメントをここに" %>-->
+  <!--  </div>       -->
+  <!--</div>-->
 
 
 
     
-    <%= f.submit "送信する",  class:"btn btn-sm btn-info btn-block-auto" %>
+    <%= f.submit "送信する",  class:"btn btn-sm btn-info btn-block-mt-3" %>
   <% end %>
   
-  
+ </div> 
 </div>
 </div> 
 <p>Find me in app/views/plants/show.html.erb</p>
