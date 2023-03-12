@@ -11,37 +11,25 @@
               <strong><i class="fas fa-leaf"></i><span> <%= @plant.plant_name %></span></strong></p>
           <p class="card-text">説明：<%= @plant.caption %></p>
           <span><i class="fas fa-user"></i> By <%= @plant.user.name %> ｜ </span>
-
-
-
-
-  <!--%= image_tag @plant.get_image %>-->
-  <!--<p>植物名：%= @plant.plant_name %></p>-->
-  <!--<p>説明：%= @plant.caption %></p>-->
-  <!--<p>投稿ユーザー画像：%= image_tag @plant.user.get_profile_image(100,100) %></p>-->
-  <!--<p class="card-text">説明：%= plant.caption %></p>-->
-          <!--<span><i class="fas fa-user"></i> By %= plant.user.name %> ｜ </span><p>ユーザーネーム：<%= @plant.user.name %></p>-->
-  <p>投稿日：<%= @plant.created_at.strftime('%Y/%m/%d') %></p>
-  <% if @plant.user == current_user %>
-    <%= link_to "削除", plant_path(@plant), method: :delete %>
-  <% end %>
-  
-  <% if @plant.favorited_by?(current_user) %>
-    <p>
-      <%= link_to plant_favorites_path(@plant), method: :delete do %>
-        ♥<%= @plant.favorites.count %> いいね
-      <% end %>
-    </p>
+          <span><i class="fas fa-calendar"></i> <%= @plant.created_at.strftime('%Y/%m/%d') %> ｜ </span>
+          <span><i class="fas fa-comment"></i> <%= @plant.plant_comments.count %> ｜ </span>
+    <% if @plant.favorited_by?(current_user) %>
+          <span>
+          <%= link_to plant_favorites_path(@plant), method: :delete do %>
+            ♥<%= @plant.favorites.count %>
+          <% end %>
     <% else %>
-    <p>
-      <%= link_to plant_favorites_path(@plant), method: :post do %>
-        ♡<%= @plant.favorites.count %> いいね
-      <% end %>
-    </p>
-  <% end %>
+          <%= link_to plant_favorites_path(@plant), method: :post do %>
+            ♡<%= @plant.favorites.count %> 
+          <% end %>
+    <% end %>
+          ｜ </span>  
+    
+    <% if @plant.user == current_user %>
+          <span><%= link_to "削除", plant_path(@plant), method: :delete %></span>
+    <% end %>
   
-</div>
-
+   
 <div>
   <p>コメント件数：<%= @plant.plant_comments.count %></p>
   <% @plant.plant_comments.each do |plant_comment| %>
