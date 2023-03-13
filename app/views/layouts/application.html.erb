@@ -28,23 +28,28 @@
       
             <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to '投稿一覧', plants_path, class: 'nav-link text-success' %>
+              <%= link_to 'Posts list', plants_path, class: 'nav-link text-success' %>
             </li>
             <li class="nav-item">
-              <%= link_to '投稿フォーム', new_plant_path, class: 'nav-link text-success' %>
+              <%= link_to 'Post from', new_plant_path, class: 'nav-link text-success' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'マイページ', user_path(current_user.id), class: 'nav-link text-success' %> 
+              <%= link_to 'My page', user_path(current_user.id), class: 'nav-link text-success' %> 
             </li>
             <li class="nav-item">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-success' %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-success' %>
             </li>
           <% else %>
+          
             <li class="nav-item">
-              <%= link_to "新規登録", new_user_registration_path, class: 'nav-link text-success' %>
+              <%= link_to "About", about_path, class: 'nav-link text-success' %>
+            </li>
+          
+            <li class="nav-item">
+              <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-success' %>
             </li>
             <li class="nav-item">
-              <%= link_to "ログイン", new_user_session_path, class: 'nav-link text-success' %>
+              <%= link_to "Log in", new_user_session_path, class: 'nav-link text-success' %>
             </li>
           <% end %>
           </ul>
