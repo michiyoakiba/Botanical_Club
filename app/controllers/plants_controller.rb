@@ -14,7 +14,11 @@ class PlantsController < ApplicationController
   end
   
   def index
-    @plants = Plant.page(params[:page])
+    # @plants = Plant.page(params[:page])
+    @q = Plant.ransack(params[:q])
+    # binding.pry
+    @plants = @q.result.page(params[:page])#(distinct: true)#.includes(:plant_name).page(params[:page]).order("created_at desc")
+    
   end
 
   def show

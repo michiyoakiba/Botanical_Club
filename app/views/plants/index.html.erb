@@ -1,1 +1,11 @@
+
+
+<%= search_form_for @q, url: plants_path do |f| %>
+  <%= f.label :name_cont, '植物名' %>
+  <%= f.search_field :plant_name_cont %>
+  <br>
+  <%= f.submit '検索' %>
+<% end %>
+
+  
 <%= render 'list', plants: @plants %>
