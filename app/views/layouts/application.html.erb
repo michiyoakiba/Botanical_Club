@@ -28,28 +28,42 @@
       
             <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to 'Posts list', plants_path, class: 'nav-link text-success' %>
+              <%= link_to plants_path, class: 'nav-link text-success' do %>
+              <i class="fab fa-envira"></i>Posts list
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Post from', new_plant_path, class: 'nav-link text-success' %>
+              <%= link_to new_plant_path, class: 'nav-link text-success' do %>
+              <i class="fab fa-envira"></i>Post from
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to 'My page', user_path(current_user.id), class: 'nav-link text-success' %> 
+              <%= link_to user_path(current_user.id), class: 'nav-link text-success' do %>
+              <i class="fas fa-heart"></i>My page
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-success' %>
+              <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-success' do %>
+              <i class="fas fa-sign-out-alt"></i>Log out
+              <% end %>
             </li>
           <% else %>
           
             <li class="nav-item">
-              <%= link_to "About", about_path, class: 'nav-link text-success' %>
+              <%= link_to about_path, class: 'nav-link text-success' do %>
+             <i class="fas fa-link"></i>About
+              <% end %>
             </li>
           
             <li class="nav-item">
-              <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-success' %>
+              <%= link_to new_user_registration_path, class: 'nav-link text-success' do %>
+              <i class="fas fa-user-plus"></i>Sign up
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to "Log in", new_user_session_path, class: 'nav-link text-success' %>
+              <%= link_to new_user_session_path, class: 'nav-link text-success' do %>
+              <i class="fas fa-sign-in-alt"></i>Log in
+              <% end %>
             </li>
           <% end %>
           </ul>
