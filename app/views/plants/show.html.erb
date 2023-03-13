@@ -64,7 +64,7 @@
           <div class="form-group">
             <%= form_with model: [@plant, @plant_comment] do |f| %>
               <div class="mb-3">
-            <%= f.text_area :comment, class:"form-control", id:"inputComment", placeholder:"コメントをここに", size:"75x5" %>
+            <%= f.text_area :comment, class:"form-control", id:"inputComment", placeholder:"コメントをここに", size:"70x5" %>
               </div>
               <p class="text-right"><%= f.submit "送信する", class:"btn btn-lg btn-info btn-block-mt-2 float-rigth" %></p>
             <% end %>
