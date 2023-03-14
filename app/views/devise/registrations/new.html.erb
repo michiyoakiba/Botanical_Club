@@ -29,8 +29,13 @@
             <%= f.password_field :password, autofocus: true, class:"form-control", id:"inputPassword", placeholder:"パスワード" %>
           </div>
           
-          <%= form_with model: [@plant, @plant_comment] do |f| %>
-            <%= f.text_area :comment, class:"form-control", id:"inputPassword", placeholder:"コメントをここに" %>
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+            </div>
+          <%= f.password_field :password_confirmation, autofocus: true, class:"form-control", id:"inputPassword", placeholder:"パスワード確認" %>
+          </div>
           
           <%= f.submit "サインアップ", class:"btn btn-lg btn-block btn-outline-success mt-5" %>
         <% end %>

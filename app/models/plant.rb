@@ -20,4 +20,19 @@ class Plant < ApplicationRecord
     favorites.exists?(user_id: user.id)
   end
   
+  
+  def self.search_for(content, method)
+    if method == 'perfect'
+      Plant.where(plant_name: content)
+    elsif method == 'forward'
+      Plant.where('plant_name LIKE ?', content+'%')
+    elsif method == 'backward'
+      Plant.where('plant_name LIKE ?', '%' + content)
+    else
+      Plant.where('plant_name LIKE ?', '%' + content + '%')
+    end
+  end
+  
+  validates :plant_name,presence:true
+  validates :caption,presence:true,length:{ maximum:200}
 end
