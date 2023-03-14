@@ -17,11 +17,7 @@
           <!--部分テンプレートにした箇所(部分的に更新したい箇所)-->
 　　      <span id="favorite_buttons_<%= @plant.id %>">
             <%= render "favorites/btn", plant: @plant %></span>  
-    
-    
-    
-    
-          
+   
     <!--% if @plant.favorited_by?(current_user) %>-->
     <!--      <span>-->
     <!--      %= link_to plant_favorites_path(@plant), method: :delete do %>-->
@@ -72,7 +68,7 @@
       <div class="input-group m-3">
         <div class="input-group-prepend" aria-hidden="true">
           <div class="form-group">
-            <%= form_with model: [@plant, @plant_comment] do |f| %>
+            <%= form_with model: [@plant, @plant_comment],local: false do |f| %>
               <div class="mb-3">
             <%= f.text_area :comment, class:"form-control", id:"inputComment", placeholder:"コメントをここに", size:"70x5" %>
               </div>
