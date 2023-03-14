@@ -20,7 +20,7 @@
           <span><%= link_to "#{plant.plant_comments.count} コメント", plant_path(plant.id), class:"text-dark" %>｜</span>
     
           <!--部分テンプレートにした箇所(部分的に更新したい箇所)-->
-　　      <span id="favorite_buttons_<%= plant.id %>">
+          <span id="favorite_buttons_<%= plant.id %>">
             <%= render "favorites/btn", plant: plant %></span>
     
     <!--% if plant.favorited_by?(current_user) %>-->
@@ -41,4 +41,3 @@
   <div class="d-flex justify-content-center"><%= paginate plants %></div>
 </div>
 
-<i class="fab fa-envira"></i>
