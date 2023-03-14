@@ -38,6 +38,11 @@
               <% end %>
             </li>
             <li class="nav-item">
+              <%= link_to users_path(current_user.id), class: 'nav-link text-success' do %>
+              <i class="fas fa-users"></i>Users
+              <% end %>
+            </li>
+            <li class="nav-item">
               <%= link_to user_path(current_user.id), class: 'nav-link text-success' do %>
               <i class="fas fa-user"></i>My page
               <% end %>
@@ -48,7 +53,11 @@
               <% end %>
             </li>
           <% else %>
-          
+            <li class="nav-item">
+              <%= link_to root_path,class: 'nav-link text-success' do %>
+              <i class="fas fa-home"></i> Home
+              <% end %>
+            </li>
             <li class="nav-item">
               <%= link_to about_path, class: 'nav-link text-success' do %>
              <i class="fas fa-link"></i>About
