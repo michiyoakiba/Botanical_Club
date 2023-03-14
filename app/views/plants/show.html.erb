@@ -13,17 +13,27 @@
           <span><i class="fas fa-user"></i> By <%= @plant.user.name %> ｜ </span>
           <span><i class="fas fa-calendar"></i> <%= @plant.created_at.strftime('%Y/%m/%d') %> ｜ </span>
           <span><i class="fas fa-comment"></i> <%= @plant.plant_comments.count %> ｜ </span>
-    <% if @plant.favorited_by?(current_user) %>
-          <span>
-          <%= link_to plant_favorites_path(@plant), method: :delete do %>
-            ♥<%= @plant.favorites.count %>
-          <% end %>
-    <% else %>
-          <%= link_to plant_favorites_path(@plant), method: :post do %>
-            ♡<%= @plant.favorites.count %> 
-          <% end %>
-    <% end %>
-          ｜ </span>  
+    
+          <!--部分テンプレートにした箇所(部分的に更新したい箇所)-->
+　　      <span id="favorite_buttons_<%= @plant.id %>">
+            <%= render "favorites/btn", plant: @plant %> ｜ </span>  
+    
+    
+    
+    
+          
+    <!--% if @plant.favorited_by?(current_user) %>-->
+    <!--      <span>-->
+    <!--      %= link_to plant_favorites_path(@plant), method: :delete do %>-->
+    <!--        ♥%= @plant.favorites.count %>-->
+    <!--      % end %>-->
+    <!--% else %>-->
+    <!--      %= link_to plant_favorites_path(@plant), method: :post do %>-->
+    <!--        ♡%= @plant.favorites.count %> -->
+    <!--      % end %>-->
+    <!--% end %>-->
+    
+          
     <% if @plant.user == current_user %>
           <span><%= link_to "削除", plant_path(@plant), method: :delete %></span>
         </div>
