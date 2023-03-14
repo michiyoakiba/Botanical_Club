@@ -16,7 +16,7 @@
     
           <!--部分テンプレートにした箇所(部分的に更新したい箇所)-->
 　　      <span id="favorite_buttons_<%= @plant.id %>">
-            <%= render "favorites/btn", plant: @plant %> ｜ </span>  
+            <%= render "favorites/btn", plant: @plant %></span>  
     
     
     
@@ -35,7 +35,7 @@
     
           
     <% if @plant.user == current_user %>
-          <span><%= link_to "削除", plant_path(@plant), method: :delete %></span>
+          <span> ｜ <%= link_to "削除", plant_path(@plant), method: :delete %></span>
         </div>
       </div>
     <% end %>  
