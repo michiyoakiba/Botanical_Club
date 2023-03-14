@@ -14,9 +14,7 @@ class PlantsController < ApplicationController
   end
   
   def index
-    # @plants = Plant.page(params[:page])
-    @q = Plant.ransack(params[:q])
-    @plants = @q.result.page(params[:page])#(distinct: true)#.includes(:plant_name).page(params[:page]).order("created_at desc")
+    @plants = Plant.page(params[:page])
     
   end
 

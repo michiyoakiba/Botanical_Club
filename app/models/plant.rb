@@ -20,8 +20,4 @@ class Plant < ApplicationRecord
     favorites.exists?(user_id: user.id)
   end
   
-  def self.ransackable_attributes(auth_object = nil)
-    ["caption", "created_at", "id", "plant_name", "updated_at", "user_id"]
-  end
-  
 end
