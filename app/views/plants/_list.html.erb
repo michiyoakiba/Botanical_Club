@@ -12,15 +12,15 @@
         <div class="col-10">
           <p class="card-title">
             <%= link_to(plant_path(plant.id), class:"text-dark") do %>
-              <strong><i class="fas fa-leaf"></i><span> <%= plant.plant_name %></span></strong>
+              <strong><i class="fab fa-envira"></i><span> <%= plant.plant_name %></span></strong>
               <% end %>
           </p>  
           <p class="card-text">説明：<%= plant.caption %></p>
           <span><i class="fas fa-user"></i> By <%= plant.user.name %> ｜ </span>
-          <span><%= link_to "#{plant.plant_comments.count} コメント", plant_path(plant.id), class:"text-dark" %> ｜ </span>
+          <span><%= link_to "#{plant.plant_comments.count} コメント", plant_path(plant.id), class:"text-dark" %>｜</span>
     
           <!--部分テンプレートにした箇所(部分的に更新したい箇所)-->
-          <span id="favorite_buttons_<%= plant.id %>">
+　　      <span id="favorite_buttons_<%= plant.id %>">
             <%= render "favorites/btn", plant: plant %></span>
     
     <!--% if plant.favorited_by?(current_user) %>-->
@@ -39,4 +39,6 @@
   </div>
   <% end %>
   <div class="d-flex justify-content-center"><%= paginate plants %></div>
-</div> 
+</div>
+
+<i class="fab fa-envira"></i>
