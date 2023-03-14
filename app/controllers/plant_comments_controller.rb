@@ -9,7 +9,9 @@ class PlantCommentsController < ApplicationController
   end
   
   def destroy
-    PlantComment.find(params[:id]).destroy
+    @plant = Plant.find(params[:plant_id])
+    plant_comment = @plant.plant_comments.find(params[:id])
+    plant_comment.destroy
     redirect_to plant_path(params[:plant_id])
   end
 
