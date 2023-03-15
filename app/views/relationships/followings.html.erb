@@ -1,2 +1,8 @@
-<h1>Relationships#followings</h1>
-<p>Find me in app/views/relationships/followings.html.erb</p>
+<div class= "ml-5">
+  <h2>Follower User</h2>
+ <% if @users.exists? %>
+    <%= render '/users/list', users: @users %> 
+ <% else %>
+    <h3>There are no users</h3> 
+ <% end %>
+ </div>

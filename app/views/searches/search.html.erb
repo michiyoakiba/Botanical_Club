@@ -1,9 +1,9 @@
 <div class= "ml-5">
-<% if @model == 'user' %>
-	<h3>Users search for "<%= @content %>"</h3>
- <%= render 'users/list', users: @records %>
-<% elsif @model == 'plant' %>
+  <% if @model == 'user' %>
+    <h3>Users search for "<%= @content %>"</h3>
+      <%= render 'users/list', users: @records %>
+  <% elsif @model == 'plant' %>
 	<h3>Plans search for "<%= @content %>"</h3>
-  <%= render 'plants/list', plants: @records %>
-<% end %>
+      <%= render 'plants/list', plants: @records %>
+  <% end %>
 </div>
