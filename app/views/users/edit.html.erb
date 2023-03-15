@@ -14,7 +14,7 @@
           </div>
           <div class="input-group mb-3" >
             <div class="mx-auto text-center">
-            <%= image_tag @user.get_profile_image(100,100) %>  
+            <%= image_tag @user.get_profile_image, size: '100x100', class:"rounded-circle"; %>  
             </div>
           </div>  
             <div><%= f.file_field :image, accept: "image/*", class: "w-100" %></div>    
