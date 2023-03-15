@@ -22,25 +22,21 @@
         
         
           <th>follows</th>
-            <td>
-              
-              <%= link_to @user.followings.count, user_followings_path(@user) %>
+            <td><%= link_to @user.followings.count, user_followings_path(@user) %></td>
               
             <!--  %= link_to user_followers_path(@user) do %>-->
             <!--<h6>%= @user.followers.count %></h6>-->
             <!--  % end %> -->
-            </td>
+            
           </th>
           
           <th>followers
-            <td>
-              
-              <%= link_to @user.followers.count, user_followers_path(@user) %>
+            <td><%= link_to @user.followers.count, user_followers_path(@user) %></td>
                 
             <!--  %= link_to user_followings_path(@user) do %>-->
             <!--<h6>%= @user.followings.count %></h6>-->
             <!--% end %>-->
-            </td>
+            
           </th>
           
           <th>
