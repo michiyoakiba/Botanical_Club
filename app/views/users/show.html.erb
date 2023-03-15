@@ -1,15 +1,36 @@
 <div class="container">
   <div class="row justify-content-around">
     <div class="col-sm-4 col-md-8">
-      <table class="table table-borderless">
+      <table class="table">
         <tbody>
+          
         <tr>
+          
           <th><%= image_tag @user.get_profile_image, size: '100x100', class:"rounded-circle"; %></th>
           <th><%= @user.name %></th>
         <% if @user == current_user %>
           <th><%= link_to "プロフィール編集", edit_user_path(@user) %></th>
         <% end %>
-        </tr>
+        
+        
+          <th>follows</th>
+            <td>
+              <%= link_to user_followers_path(@user) do %>
+            <h6><%= @user.followers.count %></h6>
+              <% end %> 
+            </td>
+          </th>
+          
+          <th>followers
+            <td>  
+              <%= link_to user_followings_path(@user) do %>
+            <h6><%= @user.followings.count %></h6>
+            <% end %>
+            </td>
+          </th>
+          
+        </tr>  
+       
        </tbody>
       </table>
     </div>
@@ -18,3 +39,4 @@
 <div><%= render 'plants/list', plants: @plants %></div>
 
 
+ <!--table-borderless-->
