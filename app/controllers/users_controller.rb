@@ -33,4 +33,5 @@ class UsersController < ApplicationController
       redirect_to plants_path
     end
   end
+  
 end

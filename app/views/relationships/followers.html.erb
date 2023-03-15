@@ -1,8 +1,8 @@
 <div class= "ml-5">
   <h2>Follower User</h2>
- <% if @users.exists? %>
+  <% if @users.exists? %>
     <%= render '/users/list', users: @users %> 
- <% else %>
+  <% else %>
     <p>There are no users</p> 
- <% end %>
- </div>
+  <% end %>
+</div>

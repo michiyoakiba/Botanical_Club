@@ -35,4 +35,5 @@ class Plant < ApplicationRecord
   
   validates :plant_name,presence:true
   validates :caption,presence:true,length:{ maximum:200}
+  
 end
