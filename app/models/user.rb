@@ -15,7 +15,7 @@ class User < ApplicationRecord
   
   # 自分がフォローする（与フォロー）側の関係性
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
-  # 与フォロー関係を通じて参照→自分がフォローしている人
+  # 与フォロー関係を通じて参照→自分がフォローしている人 (ミル君.マル君)
   has_many :followings, through: :relationships, source: :followed
   
   validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
@@ -30,6 +30,20 @@ class User < ApplicationRecord
     profile_image.variant(resize_to_limit: [100, 100]).processed
   end
   
+  
+  def follow(user)
+    relationships.create(followed_id: user.id)
+  end
+
+  def unfollow(user)
+    relationships.find_by(followed_id: user.id).destroy
+  end
+
+  def following?(user)
+    followings.include?(user)
+  end
+  
+
   def self.search_for(content, method)
     if method == 'perfect'
       User.where(name: content)
