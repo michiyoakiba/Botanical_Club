@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :plants, dependent: :destroy
-  has_many :plant_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :plant_comments, dependent: :destroy
   
   
    # 自分がフォローされる（被フォロー）側の関係性
@@ -18,7 +18,8 @@ class User < ApplicationRecord
   # 与フォロー関係を通じて参照→自分がフォローしている人
   has_many :followings, through: :relationships, source: :followed
   
-
+  validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
+  
   has_one_attached :profile_image
   
   def get_profile_image(width, height)
