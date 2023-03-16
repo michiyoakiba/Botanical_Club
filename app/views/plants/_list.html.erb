@@ -2,7 +2,7 @@
   <% plants.each do |plant| %>
   <div class="card w-50 mx-auto mt-4 shadow-lg">
     <%= link_to plant_path(plant.id) do %>
-      <%= image_tag plant.get_image, resize:"200x200", class:"card-img-top"; %> 
+      <%= image_tag plant.get_image, size:"25x700", class:"card-img-top"; %> 
   <% end %>
   <div class="card-body">
       <div class="row">

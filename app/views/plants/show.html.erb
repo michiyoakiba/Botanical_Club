@@ -1,6 +1,6 @@
 <div class="card-list-container py-5">
   <div class="card w-50 mx-auto mt-4 shadow-lg">
-    <%= image_tag @plant.get_image, resize:"200x200", class:"card-img-top"; %>
+    <%= image_tag @plant.get_image, size:"25x700", class:"card-img-top"; %>
     <div class="card-body">
       <div class="row">
         <div class="col-2">
@@ -40,7 +40,7 @@
   <div class="card-title">
     <h4 class="mx-3"><%= @plant.plant_comments.count %>件コメント</h4>
   
-<div class="card mx-3" style="max-width: 700px;">
+<div class="card mx-3"> 
   <div class="row">
     <% @plant.plant_comments.each do |plant_comment| %>
     <div class="col-2">
@@ -60,14 +60,15 @@
   </div>
 </div>
         
-    <div class="comments card-text mx-3">
+    <div class="comments text mx-3">
       <h6 class="mt-1">コメントする</h6>
     </div>
+    
  
     <div class="row">
       <div class="col-11 mx-3 pb-10">
         <%= form_with model: [@plant, @plant_comment] do |f| %>
-        <%= f.text_area :comment, class:"form-control", placeholder:"コメントをここに" %>
+        <%= f.text_area :comment, class:"form-control", placeholder:"コメントをここに", size:"75x5" %>
       </div>
     </div>
               
