@@ -14,7 +14,7 @@
           <span><i class="fas fa-calendar"></i> <%= @plant.created_at.strftime('%Y/%m/%d') %> ｜ </span>
           <span><i class="fas fa-comment"></i> <%= @plant.plant_comments.count %> ｜ </span>
     
-          <!--部分テンプレートにした箇所(部分的に更新したい箇所)-->
+          <!--部分テンプレートにした箇所(いいね機能非同期通信箇所)-->
           <span id="favorite_buttons_<%= @plant.id %>">
             <%= render "favorites/btn", plant: @plant %></span>  
    
@@ -29,7 +29,6 @@
     <!--      % end %>-->
     <!--% end %>-->
     
-          
     <% if @plant.user == current_user %>
           <span> ｜ <%= link_to "削除", plant_path(@plant), method: :delete %></span>
         </div>
@@ -39,47 +38,41 @@
     
   <div class="card-title">
     <h4 class="mx-3"><%= @plant.plant_comments.count %>件コメント</h4>
-  
-<div class="card mx-3 mb-3"> 
-  <div class="row">
-    <% @plant.plant_comments.each do |plant_comment| %>
-    <div class="col-2">
-      <%= image_tag plant_comment.user.get_profile_image(100,100), class:"mt-3 ml-3 rounded-circle"; %>
-    </div>
-    <div class="col-10">
-      <div class="card-body">
-        <p class="card-title"><%= plant_comment.created_at.strftime('%Y/%m/%d') %></p>
-        <p class="card-text"><%= plant_comment.comment %></p>
-      <% if plant_comment.user == current_user %>   
-        <p class="card-text">
-        <%= link_to "削除", plant_plant_comment_path(plant_comment.plant, plant_comment), method: :delete, class: "btn btn-danger pull-right" %> </p>      
-      <% end %> 
+    <div class="card mx-3 mb-3"> 
+      <div class="row">
+        <% @plant.plant_comments.each do |plant_comment| %>
+        <div class="col-2">
+          <%= image_tag plant_comment.user.get_profile_image(100,100), class:"mt-3 ml-3 rounded-circle"; %>
+        </div>
+        <div class="col-10">
+          <div class="card-body">
+            <p class="card-title"><%= plant_comment.created_at.strftime('%Y/%m/%d') %></p>
+            <p class="card-text"><%= plant_comment.comment %></p>
+          <% if plant_comment.user == current_user %>   
+            <p class="card-text">
+            <%= link_to "削除", plant_plant_comment_path(plant_comment.plant, plant_comment), method: :delete, class: "btn btn-danger pull-right" %> </p>      
+          <% end %> 
+          </div>
+        </div>
+        <% end %> 
       </div>
     </div>
-    <% end %> 
-  </div>
-</div>
-        
-    <div class="comments text mx-3">
-      <h6 class="mt-1">コメントする</h6>
-    </div>
-    
- 
-    <div class="row">
-      <div class="col-11 mx-3 pb-10">
-        <%= form_with model: [@plant, @plant_comment] do |f| %>
-        <%= f.text_area :comment, class:"form-control", placeholder:"コメントをここに", size:"75x5" %>
+      <div class="comments text mx-3">
+        <h6 class="mt-1">コメントする</h6>
+      </div>
+      <div class="row">
+        <div class="col-11 mx-3 pb-10">
+          <%= form_with model: [@plant, @plant_comment] do |f| %>
+          <%= f.text_area :comment, class:"form-control", placeholder:"コメントをここに", size:"75x5" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-11 mt-3 lm-2">      
+          <p class="text-right"><%= f.submit "送信する", class:"btn btn-lg btn-info btn-block-mt-2 float-rigth" %></p>
+          <% end %>
+        </div>
       </div>
     </div>
-              
-    <div class="row">
-      <div class="col-11 mt-3 lm-2">      
-        <p class="text-right"><%= f.submit "送信する", class:"btn btn-lg btn-info btn-block-mt-2 float-rigth" %></p>
-        <% end %>
-      </div>
-    </div>
-    
-  </div>
   
   </div> 
 </div>
