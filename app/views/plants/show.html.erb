@@ -37,9 +37,8 @@
     <% end %>  
     </div>
     
-    <div class="card-title">
+  <div class="card-title">
     <h4 class="mx-3"><%= @plant.plant_comments.count %>件コメント</h4>
-  
   
 <div class="card mx-3" style="max-width: 700px;">
   <div class="row">
@@ -65,48 +64,21 @@
       <h6 class="mt-1">コメントする</h6>
     </div>
  
- 
- 
- 
- <!--<div class="card mx-3" style="max-width: 700px;">-->
-  <div class="row">
-    <div class="col-11 mx-3 pb-12">
- 
- 
- 
- 
-      <!--<div class="input-group m-3">-->
-        <!--<div class="input-group-prepend" aria-hidden="true">-->
-          <!--<div class="form-group">-->
-            <%= form_with model: [@plant, @plant_comment],local: false do |f| %>
-              <!--<div class="mb-3">-->
-            <%= f.text_area :comment, class:"form-control", placeholder:"コメントをここに" %>
-              </div>
+    <div class="row">
+      <div class="col-11 mx-3 pb-10">
+        <%= form_with model: [@plant, @plant_comment],local: false do |f| %>
+        <%= f.text_area :comment, class:"form-control", placeholder:"コメントをここに" %>
+      </div>
+    </div>
               
-              
-
-        <div class="col-11 mt-3 lm-3">      
-              
-              
-              <p class="text-right"><%= f.submit "送信する", class:"btn btn-lg btn-info btn-block-mt-2 float-rigth" %></p>
-            <% end %>
-          <!--</div>   -->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div> -->
+    <div class="row">
+      <div class="col-11 mt-3 lm-2">      
+        <p class="text-right"><%= f.submit "送信する", class:"btn btn-lg btn-info btn-block-mt-2 float-rigth" %></p>
+        <% end %>
+      </div>
     </div>
     
-    
-    
-    
-    
-    
-    
   </div>
-  
-  
-  
-  
   
   </div> 
 </div>
