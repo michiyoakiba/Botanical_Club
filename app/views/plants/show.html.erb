@@ -66,7 +66,7 @@
  
     <div class="row">
       <div class="col-11 mx-3 pb-10">
-        <%= form_with model: [@plant, @plant_comment],local: false do |f| %>
+        <%= form_with model: [@plant, @plant_comment] do |f| %>
         <%= f.text_area :comment, class:"form-control", placeholder:"コメントをここに" %>
       </div>
     </div>
