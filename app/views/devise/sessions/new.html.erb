@@ -11,13 +11,13 @@
             <div class="input-group-prepend">
               <span class="input-group-text" aria-hidden="true"><i class="fas fa-user"></i></span>
             </div>
-            <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputPassword", placeholder:"ユーザー名" %>
+            <%= f.text_field :name, autofocus: true, class:"form-control", placeholder:"ユーザー名" %>
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" aria-hidden="true"><i class="fas fa-lock"></i></span>
             </div>
-            <%= f.password_field :password, autocomplete: "off", class:"form-control", id:"inputPassword", placeholder:"パスワード" %>
+            <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"パスワード" %>
           </div>
           <%= f.submit "サインイン", class:"btn btn-lg btn-block btn-outline-success mt-5" %>
         <% end %>

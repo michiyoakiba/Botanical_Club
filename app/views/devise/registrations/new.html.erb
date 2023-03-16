@@ -12,21 +12,21 @@
             <div class="input-group-prepend">
               <span class="input-group-text" aria-hidden="true"><i class="fas fa-user"></i></span>
             </div>
-            <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputPassword", placeholder:"名前" %>
+            <%= f.text_field :name, autofocus: true, class:"form-control", placeholder:"名前(全角2文字以上)" %>
           </div>
           
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" aria-hidden="true"><i class="fas fa-envelope"></i></span>
             </div>
-            <%= f.email_field :email, autofocus: true, class:"form-control", id:"inputPassword", placeholder:"メールアドレス" %>
+            <%= f.email_field :email, autofocus: true, class:"form-control", placeholder:"メールアドレス" %>
           </div>
           
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" aria-hidden="true"><i class="fas fa-lock"></i></span>
             </div class="form-group">
-            <%= f.password_field :password, autofocus: true, class:"form-control", id:"inputPassword", placeholder:"パスワード" %>
+            <%= f.password_field :password, autofocus: true, class:"form-control", placeholder:"パスワード(半角6文字以上)" %>
           </div>
           
           
@@ -34,7 +34,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
             </div>
-          <%= f.password_field :password_confirmation, autofocus: true, class:"form-control", id:"inputPassword", placeholder:"パスワード確認" %>
+          <%= f.password_field :password_confirmation, autofocus: true, class:"form-control", placeholder:"パスワード確認(半角6文字以上)" %>
           </div>
           
           <%= f.submit "サインアップ", class:"btn btn-lg btn-block btn-outline-success mt-5" %>
