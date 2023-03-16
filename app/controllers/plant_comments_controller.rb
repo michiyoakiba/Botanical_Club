@@ -1,5 +1,6 @@
 class PlantCommentsController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def create
     plant = Plant.find(params[:plant_id])
     comment = current_user.plant_comments.new(plant_comment_params)
