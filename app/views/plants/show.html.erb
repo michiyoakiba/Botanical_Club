@@ -65,19 +65,48 @@
       <h6 class="mt-1">コメントする</h6>
     </div>
  
-      <div class="input-group m-3">
-        <div class="input-group-prepend" aria-hidden="true">
-          <div class="form-group">
+ 
+ 
+ 
+ <!--<div class="card mx-3" style="max-width: 700px;">-->
+  <div class="row">
+    <div class="col-11 mx-3">
+ 
+ 
+ 
+ 
+      <!--<div class="input-group m-3">-->
+        <!--<div class="input-group-prepend" aria-hidden="true">-->
+          <!--<div class="form-group">-->
             <%= form_with model: [@plant, @plant_comment],local: false do |f| %>
-              <div class="mb-3">
-            <%= f.text_area :comment, class:"form-control", placeholder:"コメントをここに", size:"70x5" %>
+              <!--<div class="mb-3">-->
+            <%= f.text_area :comment, class:"form-control", placeholder:"コメントをここに" %>
               </div>
+              
+              
+
+        <div class="col-11 mt-3">      
+              
+              
               <p class="text-right"><%= f.submit "送信する", class:"btn btn-lg btn-info btn-block-mt-2 float-rigth" %></p>
             <% end %>
-          </div>   
-        </div>
-      </div>
-    </div> 
+          <!--</div>   -->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div> -->
+    </div>
+    
+    
+    
+    
+    
+    
+    
   </div>
+  
+  
+  
+  
+  
   </div> 
 </div>
