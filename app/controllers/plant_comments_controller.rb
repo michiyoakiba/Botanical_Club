@@ -14,7 +14,7 @@ class PlantCommentsController < ApplicationController
     plant_comment.destroy
     redirect_to plant_path(params[:plant_id])
   end
-
+  
   private
 
   def plant_comment_params
