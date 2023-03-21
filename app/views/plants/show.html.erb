@@ -1,3 +1,5 @@
+<div class="text-center"><%= flash[:notice] %></div>
+
 <div class="card-list-container py-5">
   <div class="card w-50 mx-auto mt-4 shadow-lg">
     <%= image_tag @plant.get_image, class:"card-img-top img-fluid" %>
@@ -30,7 +32,7 @@
     <!--% end %>-->
     
     <% if @plant.user == current_user %>
-          <span> ｜ <%= link_to "削除", plant_path(@plant), method: :delete %></span>
+          <span> ｜ <%= link_to "削除", plant_path(@plant), method: :delete, "data-confirm" => "本当に消しますか？" %></span>
     <% end %>
         </div>
       </div>

@@ -7,9 +7,10 @@ class PlantsController < ApplicationController
     @plant = Plant.new(plant_params)
     @plant.user_id = current_user.id
     if @plant.save
-      redirect_to plants_path
+       flash[:notice] = "You have created plant successfully."  
+       redirect_to plants_path
     else
-      render :new
+       render :new
     end  
   end
   
@@ -26,6 +27,7 @@ class PlantsController < ApplicationController
   def destroy
     @plant = Plant.find(params[:id])
     @plant.destroy
+    flash[:notice] = "plant was successfully destroyed."
     redirect_to plants_path
   end
   
