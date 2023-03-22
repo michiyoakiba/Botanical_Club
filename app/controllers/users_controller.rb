@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :is_matching_login_user, only: [:edit, :update]
+before_action :is_matching_login_user, only: [:edit, :update, :destroy]
   
   def index
     @users = User.all
@@ -20,11 +20,11 @@ before_action :is_matching_login_user, only: [:edit, :update]
     redirect_to user_path(@user.id)
   end
   
-  # def destroy
-  #   @plant = Plant.find(params[:id])
-  #   @plant.destroy
-  #   redirect_to users_path
-  # end
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_path
+  end
 
   private
 
