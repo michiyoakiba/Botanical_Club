@@ -19,6 +19,12 @@ before_action :is_matching_login_user, only: [:edit, :update]
     @user.update(user_params)
     redirect_to user_path(@user.id)
   end
+  
+  # def destroy
+  #   @plant = Plant.find(params[:id])
+  #   @plant.destroy
+  #   redirect_to users_path
+  # end
 
   private
 

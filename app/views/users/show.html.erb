@@ -22,6 +22,7 @@
           <th><%= @user.name %></th>
         <% if @user == current_user %>
           <th><%= link_to "プロフィール編集", edit_user_path(@user) %></th>
+          <!--<th>%= link_to "退会", users_path(@user), method: :delete, "data-confirm" => "Are you sure you want to delete?", class:"btn btn-danger" %></th>-->
         <% end %>
         
         
