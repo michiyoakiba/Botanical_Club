@@ -1,5 +1,5 @@
 class PlantsController < ApplicationController
-before_action :ensure_correct_user, only: [:create, :destroy]   
+  
   def new
     @plant = Plant.new
   end
@@ -36,13 +36,6 @@ before_action :ensure_correct_user, only: [:create, :destroy]
 
   def plant_params
     params.require(:plant).permit(:plant_name, :image, :caption)
-  end
-  
-  def ensure_correct_user
-    @plant = Plant.find_by(params[:id])
-    unless @plant.user == current_user
-      redirect_to plants_path
-    end
   end
   
 end
