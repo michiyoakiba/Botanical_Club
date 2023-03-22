@@ -17,7 +17,7 @@
           </p>  
           <p class="card-text">説明：<%= plant.caption %></p>
           <span><i class="fas fa-user"></i> By <%= plant.user.name %> ｜ </span>
-          <span><%= link_to "#{plant.plant_comments.count} コメント", plant_path(plant.id), class:"text-dark" %>｜</span>
+          <span><%= link_to "#{plant.plant_comments.count} コメント", plant_path(plant.id) %>｜</span>
     
           <!--部分テンプレートにした箇所(部分的に更新したい箇所)-->
           <span id="favorite_buttons_<%= plant.id %>">

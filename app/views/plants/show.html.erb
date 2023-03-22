@@ -32,7 +32,7 @@
     <!--% end %>-->
     
     <% if @plant.user == current_user %>
-          <span> ｜ <%= link_to "削除", plant_path(@plant), method: :delete, "data-confirm" => "本当に消しますか？" %></span>
+          <span> ｜ <%= link_to "削除", plant_path(@plant), method: :delete, "data-confirm" => "Are you sure you want to delete?" %></span>
     <% end %>
         </div>
       </div>
