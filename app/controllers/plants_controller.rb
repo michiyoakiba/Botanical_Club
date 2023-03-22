@@ -17,8 +17,7 @@ before_action :ensure_correct_user, only: [:update, :destroy]
   end
   
   def index
-    @plants = Plant.page(params[:page])
-    
+    @plants = Plant.order(created_at: :desc).page(params[:page])
   end
 
   def show
