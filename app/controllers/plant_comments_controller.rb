@@ -22,12 +22,11 @@ class PlantCommentsController < ApplicationController
     comment = current_user.plant_comments.new(plant_comment_params)
     comment.plant_id = @plant.id
     comment.save
-    render 'plants/show'
   end
 
   def destroy
     @plant = Plant.find(params[:plant_id])
-    plant_comment = @plant.plant_comments.find_by(params[:id])
+    plant_comment = @plant.plant_comments.find(params[:id])
     plant_comment.destroy
   end
   
