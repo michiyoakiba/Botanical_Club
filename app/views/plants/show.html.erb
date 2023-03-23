@@ -43,10 +43,7 @@
       <h4 id="plant_<%= @plant.id %>" class="mx-3"><%= @plant.plant_comments.count %>件コメント</h4>
     </div>
       
-          
-          
     <!--部分テンプレートにした箇所(コメント機能非同期通信箇所)-->
-    
     <div id="plant_comments"><%= render "plant_comments/index", plant: @plant %></div>
    
     <!--% @plant.plant_comments.each do |plant_comment| %>-->
