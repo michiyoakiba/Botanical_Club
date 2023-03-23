@@ -1,0 +1,3 @@
+$("#plant_<%= @plant.id %> .comments-count").html("<%= @plant.plant_comments.count %>件コメント");
+$(".plant_comments").html("<%= j(render 'plant_comments/index', plant: @plant) %>");
+$("#plant_comment_comment").val("");
