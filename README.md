@@ -15,7 +15,7 @@
 推しの観葉植物を共有したい時、自分に合う観葉植物を探している時
 
 ## 設計書
-<![ER図](https://app.diagrams.net/#G1EGvWawlywLGSoR0mNtmwBYygEQJR1r8R)>
+<...>
 
 ## 開発環境
 - OS：Linux(CentOS)
