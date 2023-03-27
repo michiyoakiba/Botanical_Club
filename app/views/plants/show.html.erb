@@ -45,7 +45,6 @@
       <!--部分テンプレートにした箇所(コメント機能非同期通信)-->
       <h4 id="plant_<%= @plant.id %>" class="mx-3"><%= @plant.plant_comments.count %>件コメント</h4>
     </div>
-      
     <div id="plant_comments"><%= render "plant_comments/index", plant: @plant %></div>
     
     <!--非同期通信前の記述-->
