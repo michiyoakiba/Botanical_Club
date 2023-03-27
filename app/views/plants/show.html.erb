@@ -20,7 +20,7 @@
           <span class="plant_<%= @plant.id %>"><%= @plant.plant_comments.count %></span> ｜ 
           
           <!--部分テンプレートにした箇所(いいね機能非同期通信)-->
-          <span class="favorite_buttons_<%= @plant.id %>">
+          <span id="favorite_buttons_<%= @plant.id %>">
             <%= render "favorites/btn", plant: @plant %>
           </span>
           
