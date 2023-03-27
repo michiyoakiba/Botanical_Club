@@ -14,10 +14,13 @@
           <p class="card-text">説明：<%= @plant.caption %></p>
           <span><i class="fas fa-user"></i> By <%= @plant.user.name %> ｜ </span>
           <span><i class="fas fa-calendar"></i> <%= @plant.created_at.strftime('%Y/%m/%d') %> ｜ </span>
-          <span><i class="fas fa-comment"></i> <%= @plant.plant_comments.count %> ｜ </span>
-    
+          
+          <i class="fas fa-comment"></i>
+          <!--部分テンプレートにした箇所(コメント機能非同期通信)-->
+          <span class="plant_<%= @plant.id %>"><%= @plant.plant_comments.count %></span> ｜ 
+          
           <!--部分テンプレートにした箇所(いいね機能非同期通信)-->
-          <span id="favorite_buttons_<%= @plant.id %>">
+          <span class="favorite_buttons_<%= @plant.id %>">
             <%= render "favorites/btn", plant: @plant %>
           </span>
           
