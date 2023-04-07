@@ -18,7 +18,10 @@
         <tbody>
           <tr>
       
-            <th><%= image_tag @user.get_profile_image(100,100), class:"rounded-circle" %></th>
+            <th><%= link_to users_path(@user) do %>
+              <%= image_tag @user.get_profile_image(100,100), class:"rounded-circle" %>
+                <% end %>
+            </th>
             <th><%= @user.name %></th>
           <% if @user == current_user %>
             <th><%= link_to "プロフィール編集", edit_user_path(@user), class:"btn btn-outline-primary" %></th>
