@@ -8,7 +8,7 @@ before_action :is_matching_login_user, only: [:edit, :update, :destroy]
   
   def show
     @user = User.find(params[:id])
-    @plants = @user.plants.page(params[:page])
+    @plants = @user.plants.order(created_at: :desc).page(params[:page])
   end
 
   def edit
