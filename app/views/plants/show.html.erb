@@ -2,7 +2,9 @@
 
 <div class="card-list-container">
   <div class="card mx-auto mt-4 shadow-lg" style="width: 600px;">
-    <%= image_tag @plant.get_image, class:"card-img-top img-fluid" %>
+    <%= link_to plants_path(@plant.id) do %>
+      <%= image_tag @plant.get_image, class:"card-img-top img-fluid" %>
+    <% end %>
     <div class="card-body">
       <div class="row">
         <div class="col-2">
