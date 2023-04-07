@@ -12,7 +12,7 @@
         </div>
         <div class="col-10">
           <p class="card-title">
-            <%= link_to(plants_path(@plant.id), class:"text-primary") do %>
+            <%= link_to(plants_path(@plant.id), class:"text-dark") do %>
               <strong><i class="fab fa-envira"></i><span> <%= @plant.plant_name %></span></strong></p>
             <% end %>  
           <p class="card-text">説明：<%= @plant.caption %></p>
