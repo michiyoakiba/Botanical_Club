@@ -24,7 +24,8 @@ before_action :is_matching_login_user, only: [:edit, :update, :destroy]
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_path
+    # redirect_to users_path
+    redirect_to root_path
   end
 
   private
