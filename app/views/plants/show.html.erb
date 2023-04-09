@@ -2,7 +2,7 @@
 
 <div class="card-list-container">
   <div class="card mx-auto mt-4 shadow-lg" style="width: 600px;">
-    <%= link_to plants_path(@plant.id) do %>
+    <%= link_to plants_path do %>
       <%= image_tag @plant.get_image, class:"card-img-top img-fluid" %>
     <% end %>
     <div class="card-body">
@@ -15,9 +15,7 @@
         <div class="col-10">
           <p class="card-title">
           <strong><i class="fab fa-envira"></i><span>
-            <%= link_to plants_path(@plant.id), class:"text-dark" do %>
-              <%= @plant.plant_name %>
-            <% end %>  
+            <%= link_to @plant.plant_name,plants_path, class:"text-dark" %>
           </span></strong></p>
              
           <p class="card-text">説明：<%= @plant.caption %></p>
