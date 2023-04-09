@@ -17,7 +17,7 @@
           <% users.each do |user| %> 
           <tr>
            <th><%= link_to user_path(user) do %>
-                 <%= image_tag user.get_profile_image(100,100), class:"rounded-circle mg-fluid" %>
+                 <%= image_tag user.get_profile_image(75,75), class:"rounded-circle mg-fluid" %>
                <% end %>
            </th>
            <th><%= link_to user.name, user_path(user), class:"text-dark" %></th>
