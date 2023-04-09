@@ -19,7 +19,7 @@
           <tr>
       
             <th><%= link_to users_path(@user) do %>
-              <%= image_tag @user.get_profile_image(100,100), class:"rounded-circle" %>
+              <%= image_tag @user.get_profile_image(70,70), class:"rounded-circle" %>
                 <% end %>
             </th>
             <th><%= link_to @user.name, users_path(@user), class:"text-dark" %></th>
