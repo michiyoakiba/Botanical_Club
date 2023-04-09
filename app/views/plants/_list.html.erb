@@ -14,7 +14,7 @@
         <div class="col-10">
           <p class="card-title">
           <strong><i class="fab fa-envira"></i><span>
-            <%= link_to(plant_path(plant.id), class:"text-dark") do %>
+            <%= link_to plant_path(plant.id), class:"text-dark" do %>
               <%= plant.plant_name %>
             <% end %> 
           </span></strong>
@@ -23,7 +23,7 @@
           <p class="card-text">説明：<%= plant.caption %></p>
         
           <span><i class="fas fa-user"></i> By 
-            <%= link_to(user_path(plant.user), class:"text-dark") do %>
+            <%= link_to user_path(plant.user), class:"text-dark" do %>
               <%= plant.user.name %>
             <% end %>
           ｜ </span>
