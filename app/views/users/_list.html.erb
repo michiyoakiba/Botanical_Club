@@ -24,6 +24,7 @@
            <th>フォロー数: <%= user.followings.count %></th>
            <th>フォロワー数: <%= user.followers.count %></t>
            <th><%= render "relationships/btn", user: user %></th>
+           <th><%= link_to "Users", users_path %></th>
           </tr>
           <% end %>
         </tbody>

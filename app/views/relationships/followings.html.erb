@@ -3,6 +3,7 @@
   <% if @users.exists? %>
     <%= render '/users/list', users: @users %> 
   <% else %>
-    <p>There are no users</p> 
+    <p>There are no users</p>
+    <strong><%= link_to "Users", users_path %></strong>
   <% end %>
 </div>
